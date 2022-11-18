@@ -26,12 +26,12 @@ module.exports.displayAirplaneList = (req,res,next)=>{
     });
 }
 
-
+//Add operation
 module.exports.displayAddPage = (req,res,next)=> {
     res.render('airplane/add', {title: 'Add Airplane'})
 }
 
-
+//Add process
 module.exports.processAddPage =  (req,res,next)=> {
     let newAirplane = Airplane ({
         "name": req.body.name, 
@@ -53,6 +53,7 @@ module.exports.processAddPage =  (req,res,next)=> {
     });
 }
 
+//Edit operation
 module.exports.displayEditPage = (req,res,next)=>{
     let id = req.params.id;
     Airplane.findById(id,(err,airplaneToEdit)=>{
@@ -68,7 +69,7 @@ module.exports.displayEditPage = (req,res,next)=>{
     });
 }
 
-
+//Edit process 
 module.exports.processEditPage =  (req,res,next)=> {
     let id=req.params.id;
     let updateAirplane = Airplane ({
@@ -91,6 +92,7 @@ module.exports.processEditPage =  (req,res,next)=> {
     });
 }
 
+//Delete Operation
 module.exports.performDelete = (req,res,next)=> {
     let id=req.params.id;
     Airplane.deleteOne({_id:id}, (err)=>{

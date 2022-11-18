@@ -4,7 +4,7 @@
 <!--banner partial -->
     <%- include ('../partials/banner.ejs') %>
 
-        <!-- Main Content-->
+        <!-- Table Headings-->
         <main class="container">
                 <div class="row">
                 <div class="col-md-offset-3 col-md-12">
@@ -21,7 +21,7 @@
                 <th class="text-center col-2"></th>
                 <th class="text-center col-2"></th>
                 </tr>
-                <!-- Repeat the template -->
+                <!-- Table Values -->
                 <% for(let count=0; count < Airplanelist.length; count++) { %>
                     <tr>
                         <td class="text-center col-2"><%= Airplanelist[count].name %></td>
