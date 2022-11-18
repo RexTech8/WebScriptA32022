@@ -1,0 +1,63 @@
+<!--header partial -->
+    <%- include ('../partials/header.ejs') %>
+
+<!--banner partial -->
+    <%- include ('../partials/banner.ejs') %>
+
+<!-- Content for the Edit page -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <form class="form" method="post">
+
+                <div class="form-group">
+                <label for="nameTextField"> Airplane Name </label>
+                <input type="text" class="form-control"
+                id="nameTextField"
+                placeholder="Enter the Airplane Name"
+                name="name"
+                value="<%= airplane.name %>"
+                required>
+                
+                <div class="form-group">
+                <label for="typeTextField"> Airplane Type </label>
+                <input type="text" class="form-control"
+                id="typeTextField"
+                placeholder="Enter the Airplane Type"
+                name="type"
+                value="<%= airplane.type %>"
+                required>
+
+                <div class="form-group">
+                <label for="manufacturerTextField"> Manufacturer </label>
+                <input type="text" class="form-control"
+                id="manufacturerTextField"
+                placeholder="Enter the Manufacturer Name"
+                name="manufacturer" 
+                value="<%= airplane.manufacturer %>"
+                required>
+                
+                <div class="form-group">
+                <label for="costTextField"> Cost </label>
+                <input type="number" class="form-control"
+                id="costTextField"
+                placeholder="Enter the Cost in Millions"
+                name="cost" 
+                value="<%= airplane.price %>"
+                required>
+
+                <br>
+
+                <button class="btn-btn-primary" type="submit">
+                    <i class="fas fa-edit"></i>Submit</button>
+
+                <a href="/airplanelist" class="btn btn-warning">
+                    <i class="fas fa-undo"></i>Cancel</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--footer partial -->
+    <%- include ('../partials/footer.ejs') %>

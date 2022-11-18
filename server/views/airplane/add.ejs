@@ -1,0 +1,55 @@
+<!--header partial -->
+    <%- include ('../partials/header.ejs') %>
+
+<!--header partial -->
+    <%- include ('../partials/banner.ejs') %>
+
+<!-- Content for the Add page -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <form class="form" method="post">
+
+                <div class="form-group">
+                <label for="nameTextField"> Airplane Name </label>
+                <input type="text" class="form-control"
+                id="nameTextField"
+                placeholder="Enter the Airplane Name"
+                name="name" required>
+                
+                <div class="form-group">
+                <label for="typeTextField"> Airplane Type </label>
+                <input type="text" class="form-control"
+                id="typeTextField"
+                placeholder="Enter the Airplane Type"
+                name="type" required>
+
+                <div class="form-group">
+                <label for="manufacturerTextField"> Manufacturer </label>
+                <input type="text" class="form-control"
+                id="manufacturerTextField"
+                placeholder="Enter the Manufacturer Name"
+                name="manufacturer" required>
+                
+                <div class="form-group">
+                <label for="costTextField"> Cost </label>
+                <input type="number" class="form-control"
+                id="costTextField"
+                placeholder="Enter the Cost in Millions"
+                name="cost" required>
+
+                <br>
+
+                <button class="btn-btn-primary" type="submit">
+                    <i class="fas fa-edit"></i>Submit</button>
+
+                <a href="/airplanelist" class="btn btn-warning">
+                    <i class="fas fa-undo"></i>Cancel</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+        <!--footer partial -->
+        <%- include ('../partials/footer.ejs') %>

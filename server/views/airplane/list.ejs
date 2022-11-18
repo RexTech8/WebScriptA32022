@@ -1,0 +1,48 @@
+<!--header partial -->
+    <%- include ('../partials/header.ejs') %>
+
+<!--banner partial -->
+    <%- include ('../partials/banner.ejs') %>
+
+        <!-- Main Content-->
+        <main class="container">
+                <div class="row">
+                <div class="col-md-offset-3 col-md-12">
+                <a href="/airplanelist/add" class="btn btn-primary" role="button">
+                    <i class="fas fa-plus-circle"></i> Add an Airplane </a>
+                <br>
+                <br>
+                <table class="table table-bordered table-striped table-hover">
+                <tr>
+                <th class="text-center col-2">Name</th>
+                <th class="text-center col-2">Type</th>
+                <th class="text-center col-2">Manufacturer</th>
+                <th class="text-center col-2">Cost (in millions)</th>
+                <th class="text-center col-2"></th>
+                <th class="text-center col-2"></th>
+                </tr>
+                <!-- Repeat the template -->
+                <% for(let count=0; count < Airplanelist.length; count++) { %>
+                    <tr>
+                        <td class="text-center col-2"><%= Airplanelist[count].name %></td>
+                        <td class="text-center col-2"><%= Airplanelist[count].type %></td>
+                        <td class="text-center col-2"><%= Airplanelist[count].manufacturer %></td>
+                        <td class="text-center col-2"><%= Airplanelist[count].cost %></td>
+                        <td class="text-center col-2">
+                            <a href="/airplanelist/edit/<%= Airplanelist[count]._id %>"
+                                class="btn btn-primary"
+                                <i class="fas fa-pencil-alt"></i> Edit </a>
+                        </td>
+                        <td class="text-center col-2">
+                            <a href="/airplanelist/delete/<%= Airplanelist[count]._id %>"
+                                class="btn btn-danger"
+                                <i class="fas fa-trash-alt"></i> Delete </a>
+                        </td>
+                    </tr>
+                <% } %>
+                </table>
+                </div>
+            </div>
+        </main>
+        <!--footer partial -->
+        <%- include ('../partials/footer.ejs') %>
